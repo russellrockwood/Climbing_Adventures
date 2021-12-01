@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe City do
+RSpec.describe Hostel do
   # describe 'instance methods' do
     # call an instance method on a class
   # end
