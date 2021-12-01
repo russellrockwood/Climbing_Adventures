@@ -1,0 +1,7 @@
+<form action="/areas" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Enter a new area:</p>
+  <input type='text' name='area[title]'/><br/>
+  <textarea name='area[description]'></textarea><br/>
+  <input type='submit'/>
+</form>
