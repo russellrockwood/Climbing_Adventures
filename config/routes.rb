@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   get '/cities/:id', to: 'cities#show'
 
   get '/hostels', to: 'hostels#index'
+  get '/hostels/:id', to: 'hostels#show'
+
+  get '/cities/:id/hostels', to: 'cities#hostels_by_city'
+
 end
