@@ -1,0 +1,7 @@
+<h1>All Hostels</h1>
+
+<% @hostels.each do |hostel| %>
+  <h2><%= hostel.name =%> </h2>
+  <p>Vacancies: <%= hostel.vacancies == true ? 'Yes' : 'No' %></p>
+  <p>Max Occupancy: <%= hostel.max_occupancy %></p>
+<% end %>

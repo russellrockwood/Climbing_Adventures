@@ -4,4 +4,7 @@ Rails.application.routes.draw do
 
   get '/cities', to: 'cities#index'
   get '/cities/new', to: 'cities#new'
+  get '/cities/:id', to: 'cities#show'
+
+  get '/hostels', to: 'hostels#index'
 end
