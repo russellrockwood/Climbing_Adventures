@@ -18,4 +18,10 @@ RSpec.describe 'Cities index page', type: :feature do
     expect(page).to have_content(city2.name)
     expect(page).to have_content(city2.created_at)
   end
+
+  it 'has link to hostels index' do
+    visit '/cities'
+
+    expect(page).to have_link('Hostels', :href=>'/hostels')
+  end
 end

@@ -10,7 +10,7 @@ class CitiesController < ApplicationController
     @city = City.find(params[:id])
   end
 
-  def hostels_by_city
+  def city_hostels
     @city = City.find(params[:id])
     @hostels = @city.hostels
   end

@@ -4,7 +4,7 @@
 
 <% @hostels.each do |hostel| %>
   <h2><%= hostel.name %></h2>
-  <p>Vacancies: <%= hostel.vacancies == true ? 'Yes' : 'No'%></p>
+  <p>Vacancies: <%= hostel.vacancies %></p>
   <p>Max Occupancy: <%= hostel.max_occupancy %></p>
   <p>Date Added: <%= hostel.created_at %></p>
   <p>Updated: <%= hostel.updated_at %></p>

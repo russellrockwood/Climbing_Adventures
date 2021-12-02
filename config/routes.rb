@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get '/hostels', to: 'hostels#index'
   get '/hostels/:id', to: 'hostels#show'
 
-  get '/cities/:id/hostels', to: 'cities#hostels_by_city'
+  get '/cities/:id/hostels', to: 'cities#city_hostels'
 
 end
