@@ -14,6 +14,7 @@ RSpec.describe 'City show page', type: :feature do
     expect(page).to have_content(@city1.name)
     expect(page).to have_content(@city1.travel_advisory)
     expect(page).to have_content(@city1.population)
+    expect(page).to have_content('Number of Hostels: 0')
     expect(page).to have_content(@city1.created_at)
     expect(page).to have_content(@city1.updated_at)
   end
