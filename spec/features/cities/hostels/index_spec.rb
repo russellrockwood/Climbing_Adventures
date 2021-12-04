@@ -23,4 +23,17 @@ RSpec.describe 'City hostels index', type: :feature do
     expect(page).to have_content(@hostel.created_at)
     expect(page).to have_content(@hostel.updated_at)
   end
+
+  it 'has a link to add new hostel to city' do
+    visit "/cities/#{@city.id}/hostels"
+
+    expect(page).to have_link('Add Hostel', :href=> "/cities/#{@city.id}/hostels/new")
+  end
+
+  it "links to a create new hostel by city page" do
+    visit "/cities/#{@city.id}/hostels"
+
+    click_on('Add Hostel')
+    expect(current_path).to eq("/cities/#{@city.id}/hostels/new")
+  end
 end

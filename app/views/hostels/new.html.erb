@@ -1,0 +1,15 @@
+<h1>Add Hostel</h1>
+
+<form  action="/hostels.html" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label for="hostel_name">City Name</label>
+  <input id="hostel_name" type="text" name="hostel[name]"><br>
+
+  <label for="vacancies">Vacancies</label>
+  <input id="vacancies" type="checkbox" name="hostel[vacancies]"><br>
+
+  <label for="max_occupancy">Max Occupancy</label>
+  <input id="max_occupancy"type="number" name="hostel[max_occupancy]"><br><br>
+  <input type="submit" value="Create Hostel">
+</form>
