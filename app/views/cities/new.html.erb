@@ -1,1 +1,14 @@
-<h1>Add City</h1>
+<form  action="/cities.html" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <h3>Add New City</h3>
+
+  <label for="city_name">City Name</label>
+  <input id="city_name" type="text" name="city[name]"><br>
+
+  <label for="travel_advisory">Travel Advisory</label>
+  <input id="travel_advisory" type="checkbox" name="city[travel_advisory]"><br>
+
+  <label for="population">Population</label>
+  <input id="population"type="number" name="city[population]"><br>
+  <input type="submit">
+</form>

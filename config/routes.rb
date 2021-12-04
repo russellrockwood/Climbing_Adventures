@@ -5,10 +5,11 @@ Rails.application.routes.draw do
   get '/cities', to: 'cities#index'
   get '/cities/new', to: 'cities#new'
   get '/cities/:id', to: 'cities#show'
+  get '/cities/:id/hostels', to: 'cities#city_hostels'
+  post '/cities', to: 'cities#create'
 
   get '/hostels', to: 'hostels#index'
   get '/hostels/:id', to: 'hostels#show'
 
-  get '/cities/:id/hostels', to: 'cities#city_hostels'
 
 end
