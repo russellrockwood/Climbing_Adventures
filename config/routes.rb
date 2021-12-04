@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/cities/:id', to: 'cities#show'
   get '/cities/:id/hostels', to: 'cities#city_hostels'
   post '/cities', to: 'cities#create'
+  get '/cities/:id/edit', to: 'cities#edit'
+  patch 'cities/:id', to: 'cities#update'
 
   get '/hostels', to: 'hostels#index'
   get '/hostels/:id', to: 'hostels#show'

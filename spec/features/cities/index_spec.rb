@@ -30,4 +30,15 @@ RSpec.describe 'Cities index page', type: :feature do
 
     expect(page).to have_link('Add City', :href=>'/cities/new')
   end
+
+  it 'has link to update city' do
+    city1 = City.create(
+      name: 'Townsville',
+      travel_advisory: false,
+      population: 50)
+
+    visit '/cities'
+
+    expect(page).to have_link('Update', :href=>"/cities/#{city1.id}/edit")
+  end
 end

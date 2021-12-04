@@ -1,0 +1,16 @@
+
+<h1>Update <%= @city.name %></h1>
+
+<form action="/cities/<%= @city.id %>" method="patch">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label for="city_name">City Name</label>
+  <input id="city_name" type="text" name="city[name]" value="<%= @city.name %>"><br>
+
+  <label for="travel_advisory">Travel Advisory</label>
+  <input id="travel_advisory" type="checkbox" name="city[travel_advisory]" <%= @city.travel_advisory ? 'checked': '' %>><br>
+
+  <label for="population">Population</label>
+  <input id="population" type="number" name="city[population]" value="<%= @city.population %>"><br>
+  <input type="submit" value="Update">
+</form>
