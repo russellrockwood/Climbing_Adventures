@@ -10,7 +10,6 @@ RSpec.describe 'Cities edit page', type: :feature do
       visit "/cities/#{city1.id}/edit"
 
       expect(page).to have_content(city1.name)
-      # expect(page).to have_content(city1.travel_advisory)
       expect(page).to have_field("Travel Advisory", checked: true)
       expect(page).to have_field("population")
 

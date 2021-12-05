@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   get '/hostels', to: 'hostels#index'
   get '/hostels/:id', to: 'hostels#show'
+  get '/hostels/:id/edit', to: 'hostels#edit'
+  patch '/hostels/:id' , to: 'hostels#update'
 
 
 end

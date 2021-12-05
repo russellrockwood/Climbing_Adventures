@@ -30,4 +30,10 @@ RSpec.describe 'Hostel show page', type: :feature do
 
     expect(page).to have_link("Hostel Index", :href=>"/hostels")
   end
+
+  it "has a link to hostel edit page" do
+    visit "/hostels/#{@hostel1.id}"
+
+    expect(page).to have_link("Update", :href=>"/hostels/#{@hostel1.id}/edit")
+  end
 end
