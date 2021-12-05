@@ -1,24 +1,25 @@
 require 'rails_helper'
 
 RSpec.describe 'Hostels index page', type: :feature do
-  it 'can see all hostels and attributes' do
+  before(:each) do
     @city1 = City.create(
       name: 'Townsville',
       travel_advisory: false,
       population: 50)
     @hostel1 = Hostel.create(
-      name: 'Big Hostel',
+      name: 'Small Hostel',
       vacancies: true,
       max_occupancy: 15,
       city_id: @city1.id
     )
     @hostel2 = Hostel.create!(
       name: 'Big Hostel',
-      vacancies: false,
+      vacancies: true,
       max_occupancy: 25,
       city_id: @city1.id
     )
-
+  end
+  it 'can see all hostels and attributes' do
     visit '/hostels'
 
     expect(page).to have_link(@hostel1.name, :href=>"/hostels/#{@hostel1.id}")
@@ -32,6 +33,20 @@ RSpec.describe 'Hostels index page', type: :feature do
     expect(page).to have_content(@hostel2.max_occupancy)
     expect(page).to have_content(@hostel2.created_at)
     expect(page).to have_content(@hostel2.updated_at)
+  end
+
+  it 'has link to sort hostels alphabatacally' do
+    visit '/hostels'
+
+    expect(page).to have_link('Sort', :href=>'/hostels?order=name')
+  end
+
+  it 'orders hostels alphabatacally' do
+    visit '/hostels'
+    click_on('Sort')
+
+    expect(@hostel2.name).to appear_before(@hostel1.name)
+    expect(page).to have_current_path('/hostels?order=name')
   end
 
   it 'has link to cities index' do

@@ -5,4 +5,8 @@ class Hostel < ApplicationRecord
   def self.hostels_with_vacancies
     Hostel.where(vacancies: true)
   end
+
+  def self.alphabetical
+    Hostel.order('name')
+  end
 end

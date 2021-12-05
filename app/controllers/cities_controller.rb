@@ -1,6 +1,6 @@
 class CitiesController < ApplicationController
   def index
-    @cities = City.cities_asc
+    @cities = City.cities_desc
   end
 
   def new
