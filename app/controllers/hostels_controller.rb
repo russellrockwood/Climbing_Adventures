@@ -1,7 +1,7 @@
 class HostelsController < ApplicationController
 
   def index
-    @hostels = Hostel.all
+    @hostels = Hostel.hostels_with_vacancies
   end
 
   def show
