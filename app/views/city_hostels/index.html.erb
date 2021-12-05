@@ -1,6 +1,9 @@
-<a href="/cities/<%= @city.id %>">Back</a>
+<a href="/cities/<%= @city.id %>">Back</a><br><br>
 
 <h1><%= @city.name %> Hostels</h1>
+
+<%= link_to "Sort", hostels_path(order: 'name') %>
+
 
 <% @hostels.each do |hostel| %>
   <h2><%= hostel.name %></h2>

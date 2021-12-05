@@ -1,9 +1,9 @@
 class HostelsController < ApplicationController
 
   def index
-    if params[:order] == 'name'
-      return @hostels = Hostel.hostels_with_vacancies.alphabetical
-    end
+    # if params[:order] == 'name'
+    #   return @hostels = Hostel.hostels_with_vacancies.alphabetical
+    # end
     @hostels = Hostel.hostels_with_vacancies
   end
 

@@ -2,7 +2,11 @@ class CityHostelsController < ApplicationController
 
   def index
     @city = City.find(params[:city_id])
-    @hostels = @city.hostels
+    if params[:order] == 'name'
+      @hostels = Hostel.hostels_with_vacancies.alphabetical
+    else
+      @hostels = @city.hostels
+    end
   end
 
   def new
