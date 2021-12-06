@@ -24,4 +24,20 @@ RSpec.describe 'City show page', type: :feature do
 
     expect(page).to have_link("#{@city1.name} Hostels", :href=>"/cities/#{@city1.id}/hostels")
   end
+
+  it "has a link to delete city" do
+    visit "/cities/#{@city1.id}"
+
+    expect(page).to have_link("Delete #{@city1.name}", :href=>"/cities/#{@city1.id}")
+  end
+
+  it "removes city" do
+    visit "/cities/#{@city1.id}"
+    click_link("Delete #{@city1.name}")
+
+    expect(current_path).to eq('/cities')
+    expect(page).to have_no_content("Townsville")
+  end
+
+
 end

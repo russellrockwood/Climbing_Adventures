@@ -35,23 +35,15 @@ RSpec.describe 'Hostels index page', type: :feature do
     expect(page).to have_content(@hostel2.updated_at)
   end
 
-  it 'has link to sort hostels alphabatacally' do
-    visit '/hostels'
-
-    expect(page).to have_link('Sort', :href=>'/hostels?order=name')
-  end
-
-  it 'orders hostels alphabatacally' do
-    visit '/hostels'
-    click_on('Sort')
-
-    expect(@hostel2.name).to appear_before(@hostel1.name)
-    expect(page).to have_current_path('/hostels?order=name')
-  end
-
   it 'has link to cities index' do
     visit '/hostels'
 
     expect(page).to have_link('Cities', :href=>'/cities')
+  end
+
+  it "has link to update hostels" do
+    visit '/hostels'
+
+    expect(page).to have_link('Update', :href=> "/hostels/#{@hostel1.id}/edit")
   end
 end

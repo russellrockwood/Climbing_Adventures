@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   post '/cities', to: 'cities#create'
   get '/cities/:id/edit', to: 'cities#edit'
   patch '/cities/:id', to: 'cities#update'
+  delete '/cities/:id', to: 'cities#destroy'
 
   get '/cities/:city_id/hostels', to: 'city_hostels#index'
-  # get '/city/hostels/ordered', to: 'city_hostels#index'
 
   get '/cities/:city_id/hostels/new', to: 'city_hostels#new'
   post '/hostels', to: 'city_hostels#create'

@@ -41,4 +41,9 @@ class CitiesController < ApplicationController
     @city = City.find(params[:id])
     @hostels = @city.hostels
   end
+
+  def destroy
+    City.destroy(params[:id])
+    redirect_to '/cities'
+  end
 end
