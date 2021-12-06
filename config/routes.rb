@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   patch '/cities/:id', to: 'cities#update'
 
   get '/cities/:city_id/hostels', to: 'city_hostels#index'
+  # get '/city/hostels/ordered', to: 'city_hostels#index'
+
   get '/cities/:city_id/hostels/new', to: 'city_hostels#new'
   post '/hostels', to: 'city_hostels#create'
 
