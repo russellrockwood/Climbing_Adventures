@@ -1,10 +1,12 @@
 class CityHostelsController < ApplicationController
 
   def index
-    @city = City.find(params[:city_id])
     # binding.pry
-    if params[:order] == 'name'
+    @city = City.find(params[:city_id])
+    if params[:order] 
       @hostels = @city.hostels.alphabetical
+    elsif params[:max]
+      @hostels = @city.hostels.occupancy_threshold(params[:max])
     else
       @hostels = @city.hostels
     end

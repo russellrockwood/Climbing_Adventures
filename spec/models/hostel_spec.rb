@@ -27,11 +27,15 @@ RSpec.describe Hostel do
     it 'only shows hostels with vacancies' do
       expect(@city1.hostels.hostels_with_vacancies.length).to eq(1)
     end
-  end
 
-  it "can sort hostels alphabatacally" do
-    expect(@city1.hostels.alphabetical.first.name).to eq("Big Hostel")
-    expect(@city1.hostels.alphabetical.last.name).to eq("Small Hostel")
+    it "can sort hostels alphabatacally" do
+      expect(@city1.hostels.alphabetical.first.name).to eq("Big Hostel")
+      expect(@city1.hostels.alphabetical.last.name).to eq("Small Hostel")
+    end
+
+    it "finds hostels with where max occupany meets input threshold" do
+      expect(@city1.hostels.occupancy_threshold(16).length).to eq(1)
+    end
   end
 
   describe 'relationships' do

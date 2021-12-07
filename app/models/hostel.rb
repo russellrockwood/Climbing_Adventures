@@ -9,4 +9,8 @@ class Hostel < ApplicationRecord
   def self.alphabetical
     Hostel.order('name')
   end
+
+  def self.occupancy_threshold(num)
+    Hostel.where("max_occupancy >= ?", num)
+  end
 end

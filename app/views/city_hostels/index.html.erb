@@ -2,8 +2,12 @@
 
 <h1><%= @city.name %> Hostels</h1>
 
+<%= form_with url: "/cities/#{@city.id}/hostels", method: :get, local: true do |form| %>
+  <%= form.number_field :max %>
+  <%= form.submit 'Filter by max occupancy' %>
+<% end %>
 
-<a href="/cities/<%= @city.id %>/hostels?order=name">Sort</a>
+<a href="/cities/<%= @city.id %>/hostels?order=name">Sort</a><br>
 
 <% @hostels.each do |hostel| %>
   <h2><%= hostel.name %></h2>

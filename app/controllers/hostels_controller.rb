@@ -1,9 +1,6 @@
 class HostelsController < ApplicationController
 
   def index
-    # if params[:order] == 'name'
-    #   return @hostels = Hostel.hostels_with_vacancies.alphabetical
-    # end
     @hostels = Hostel.hostels_with_vacancies
   end
 
@@ -26,6 +23,11 @@ class HostelsController < ApplicationController
 
       hostel.save
       redirect_to "/hostels/#{hostel.id}"
+  end
+
+  def destroy
+    Hostel.destroy(params[:id])
+    redirect_to '/hostels'
   end
 
 end

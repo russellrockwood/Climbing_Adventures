@@ -19,6 +19,6 @@ Rails.application.routes.draw do
   get '/hostels/:id', to: 'hostels#show'
   get '/hostels/:id/edit', to: 'hostels#edit'
   patch '/hostels/:id' , to: 'hostels#update'
-
+  delete '/hostels/:id', to: 'hostels#destroy'
 
 end

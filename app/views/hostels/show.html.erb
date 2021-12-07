@@ -5,4 +5,6 @@
 <p>Max Occupancy: <%= @hostel.max_occupancy %></p>
 <p>Added: <%= @hostel.created_at %></p>
 <p>Updated: <%= @hostel.updated_at %></p>
-<a href="/hostels/<%= @hostel.id %>/edit">Update</a>
+<a href="/hostels/<%= @hostel.id %>/edit">Update</a><br>
+
+<%= link_to "Delete #{@hostel.name}", "/hostels/#{@hostel.id}", method: 'delete' %>

@@ -46,4 +46,11 @@ RSpec.describe 'Hostels index page', type: :feature do
 
     expect(page).to have_link('Update', :href=> "/hostels/#{@hostel1.id}/edit")
   end
+
+  it 'deletes hostel' do
+    visit '/hostels'
+    click_button("delete", :match => :first)
+
+    expect(page).to have_no_content('Small Hostel')
+  end
 end

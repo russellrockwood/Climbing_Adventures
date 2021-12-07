@@ -60,4 +60,18 @@ RSpec.describe 'City hostels index', type: :feature do
 
     expect(page).to have_link('Back', :href=> "/cities/#{@city.id}")
   end
+
+  it "text" do
+    visit "/cities/#{@city.id}/hostels"
+
+    expect(page).to have_field("max")
+  end
+
+  it "sorts by max occupancy input threshold" do
+    visit "/cities/#{@city.id}/hostels"
+    fill_in 'max', with: 16
+    click_on('Filter by max occupancy')
+
+    expect(page).to have_no_content('Cool Hostel')
+  end
 end
