@@ -8,9 +8,9 @@ class CitiesController < ApplicationController
 
   def create
     city = City.new({
-      name: params[:city][:name],
-      travel_advisory: params[:city][:travel_advisory],
-      population: params[:city][:population]
+      name: params[:name],
+      travel_advisory: params[:travel_advisory],
+      population: params[:population]
       })
 
     city.save
@@ -28,18 +28,13 @@ class CitiesController < ApplicationController
   def update
     city = City.find(params[:id])
     city.update({
-      name: params[:city][:name],
-      travel_advisory: params[:city][:travel_advisory] == 'on' ? true : false,
-      population: params[:city][:population]
+      name: params[:name],
+      travel_advisory: params[:travel_advisory],
+      population: params[:population]
       })
 
     city.save
     redirect_to "/cities/#{city.id}"
-  end
-
-  def city_hostels
-    @city = City.find(params[:id])
-    @hostels = @city.hostels
   end
 
   def destroy

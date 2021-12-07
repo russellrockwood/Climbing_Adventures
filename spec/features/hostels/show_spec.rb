@@ -13,8 +13,6 @@ RSpec.describe 'Hostel show page', type: :feature do
       city_id: @city1.id)
   end
   it 'has all information for one hostel' do
-
-
     visit "/hostels/#{@hostel1.id}"
 
     expect(page).to have_content(@hostel1.name)

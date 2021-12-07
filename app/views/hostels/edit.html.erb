@@ -9,10 +9,7 @@
   <%= form.label :max_occupancy %>
   <%= form.number_field :max_occupancy %><br>
 
-  <%= form.label :city_id %>
   <%= form.hidden_field :city_id, value: @hostel.city_id %><br>
 
   <%= form.submit "Update" %>
 <% end %>
-
-<%# f.email_field(current_user, current_user.email) %>

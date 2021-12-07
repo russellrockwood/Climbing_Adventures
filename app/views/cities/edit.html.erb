@@ -1,17 +1,15 @@
 <a href="/cities/<%= @city.id %>">Back</a>
 <h1>Update <%= @city.name %></h1>
 
-<form action="/cities/<%= @city.id %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name="_method" value="PATCH">
+<%= form_with url: "/cities/#{@city.id}", method: :patch, local:true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name, value: @city.name %><br>
 
-  <label for="city_name">City Name</label>
-  <input id="city_name" type="text" name="city[name]" value="<%= @city.name %>"><br>
+  <%= form.label :travel_advisory %>
+  <%= form.check_box :travel_advisory, value: @city.travel_advisory%><br>
 
-  <label for="travel_advisory">Travel Advisory</label>
-  <input id="travel_advisory" type="checkbox" name="city[travel_advisory]" <%= @city.travel_advisory ? 'checked': '' %>><br>
+  <%= form.label :population %>
+  <%= form.number_field :population, value: @city.population %><br>
 
-  <label for="population">Population</label>
-  <input id="population" type="number" name="city[population]" value="<%= @city.population %>"><br>
-  <input type="submit" value="Update">
-</form>
+  <%= form.submit "Update" %>
+<% end %>

@@ -29,7 +29,7 @@ RSpec.describe 'Cities index page', type: :feature do
   it 'has link to add new city' do
     visit '/cities'
 
-    expect(page).to have_link('Add City', :href=>'/cities/new')
+    expect(page).to have_link('New City', :href=>'/cities/new')
   end
 
   it 'has link to update city' do
