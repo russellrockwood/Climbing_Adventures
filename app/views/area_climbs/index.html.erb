@@ -1,0 +1,25 @@
+<h1><%= "#{@area.name} Climbs"%> </h1>
+
+<p><%= link_to "New #{@area.name} climb", "/areas/#{@area.id}/climbs/new" %></p>
+
+<%= button_to "Sort climbs alphabetically", "/areas/#{@area.id}/climbs?order=name", method: :get %>
+
+<a href="/areas/<%= @area.id %>/climbs?order=name">Sort</a>
+
+
+<%= form_with url: "/areas/#{@area.id}/climbs", method: :get, local: true do |form| %>
+  <%= form.label :min_pitches %>
+  <%= form.number_field :min_pitches %>
+  <%= form.submit 'Only return climbs with at least this many pitches' %>
+<% end %>
+
+
+<% @climbs.each do |climb| %>
+<h3> <%= climb.name %> </h3>
+<p>Sport or Trad? - <%= climb.sport_or_trad %> </p>
+<p>Yosemite Decimal System Difficulty - <%= climb.yds_difficulty %> </p>
+<p>Number of pitches - <%= climb.number_of_pitches %> </p>
+<p>Number of draws required - <%= climb.number_of_draws %> </p>
+<p>Is there dangerous fall potential? - <%= climb.dangerous_falls %> </p>
+
+<% end %>

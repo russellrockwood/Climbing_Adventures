@@ -1,0 +1,22 @@
+<%= form_with url: "/areas/#{@area.id}", method: :patch, local: true do |form|%>
+  <%= form.label :name %>
+  <p><%= form.text_field :name %></p>
+
+  <%= form.label :nearest_city %>
+  <p><%= form.text_field :nearest_city %></p>
+
+  <%= form.label :state %>
+  <p><%= form.text_field :state %></p>
+
+  <%= form.label :has_free_camping %>
+  <p><%= form.text_field :has_free_camping %></p>
+
+  <%= form.label :cost_for_paid_camping %>
+  <p><%= form.text_field :cost_for_paid_camping %></p>
+
+  <%= form.label :rock_type %>
+  <p><%= form.text_field :rock_type %></p>
+
+  <%= form.submit 'Update Area' %>
+
+<% end %>

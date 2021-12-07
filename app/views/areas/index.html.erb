@@ -1,5 +1,18 @@
-<h1>All Areas</h1>
+<h1>Climbing Areas</h1>
+
+<p><%= link_to "New Area", "/areas/new" %></p>
 
 <% @areas.each do |area| %>
-  <h3><%= area %></h3>
+  <h3>
+    <%= area.name %>
+    <%= button_to "Edit #{area.name}", "/areas/#{area.id}/edit", method: :get %>
+    <%= button_to "Delete", "/areas/#{area.id}", method: :delete %>
+  </h3>
+  <p>Nearest city: <%= area.nearest_city %></p>
+  <p>State: <%= area.state %></p>
+  <p>Has free camping?: <%= area.has_free_camping %></p>
+  <p>Cost for paid camping: <%= area.cost_for_paid_camping %></p>
+  <p>Typical rock type: <%= area.rock_type %></p>
+  <p>Created: <%= area.created_at %></p>
+
 <% end %>

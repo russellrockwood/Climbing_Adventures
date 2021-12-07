@@ -1,0 +1,22 @@
+<%= form_with url: "/climbs/#{@climb.id}", method: :patch, local: true do |form|%>
+  <%= form.label :name %>
+  <p><%= form.text_field :name %></p>
+
+  <%= form.label :sport_or_trad %>
+  <p><%= form.text_field :sport_or_trad %></p>
+
+  <%= form.label :yds_difficulty %>
+  <p><%= form.text_field :yds_difficulty %></p>
+
+  <%= form.label :number_of_pitches %>
+  <p><%= form.text_field :number_of_pitches %></p>
+
+  <%= form.label :number_of_draws %>
+  <p><%= form.text_field :number_of_draws %></p>
+
+  <%= form.label :dangerous_falls %>
+  <p><%= form.text_field :dangerous_falls %></p>
+
+  <%= form.submit 'Update Climb' %>
+
+<% end %>

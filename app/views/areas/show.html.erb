@@ -1,0 +1,12 @@
+ <h1><%= @area.name %></h1>
+ <p><%= link_to "Area Climbs", "/areas/#{@area.id}/climbs" %></p>
+
+
+ <p><%= button_to "Edit #{@area.name}", "/areas/#{@area.id}/edit", method: :get %></p>
+ <p><%= button_to "Delete", "/areas/#{@area.id}", method: :delete %></p>
+ <p>Nearest city: <%= @area.nearest_city %></p>
+ <p>State: <%= @area.state %></p>
+ <p>Has free camping?: <%= @area.has_free_camping %></p>
+ <p>Cost for paid camping: <%= @area.cost_for_paid_camping %></p>
+ <p>Typical rock type: <%= @area.rock_type %></p>
+ <p>Number of climbs: <%= @area.climbs.length %></p>

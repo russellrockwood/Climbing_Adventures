@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+@yosemite = Area.create!(name: 'Yosemite', nearest_city: 'El Portal', state: 'California', has_free_camping: false, cost_for_paid_camping: 10, rock_type: 'granite')
+@royal_arches = @yosemite.climbs.create!(name: 'Royal Arches', sport_or_trad: 'trad', yds_difficulty: '5.10a', number_of_pitches: 15, number_of_draws: 0, dangerous_falls: false)
+@dawn_wall = @yosemite.climbs.create!(name: 'The Dawn Wall', sport_or_trad: 'trad', yds_difficulty: '5.14c', number_of_pitches: 32, number_of_draws: 0, dangerous_falls: true)

@@ -1,7 +1,37 @@
+<!--
 <form action="/areas" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <p>Enter a new area:</p>
-  <input type='text' name='area[title]'/><br/>
-  <textarea name='area[description]'></textarea><br/>
+  <p>Enter the name of new climbing area:</p>
+  <input type='text' name='area[name]'/><br/>
+  <p>Enter the name of nearest city:</p>
+  <input type='text' name='area[nearest_city]'/><br/>
+  <p>Enter the state:</p>
+  <input type='text' name='area[state]'/><br/>
+  <p>Is there free camping near this area?:</p>
+  <input type='text' name='area[has_free_camping]'/><br/>
+  <p>How much does paid camping near this area cost?:</p>
+  <input type='text' name='area[cost_for_paid_camping]'/><br/>
+
+  <p>What is the primary rock type at this area?:</p>
+  <textarea name='area[rock_type]'></textarea><br/>
   <input type='submit'/>
 </form>
+-->
+
+<%= form_with url: '/areas', method: :post, local: true do |form| %>
+  
+  <p>Enter the name of new climbing area:</p>
+  <%= form.text_field :name %>
+  <p>Enter the name of nearest city:</p>
+  <%= form.text_field :nearest_city %>
+  <p>Enter the state:</p>
+  <%= form.text_field :state %>
+  <p>Is there free camping near this area?:</p>
+  <%= form.text_field :has_free_camping %>
+  <p>How much does paid camping near this area cost?:</p>
+  <%= form.text_field :cost_for_paid_camping %>
+  <p>What is the primary rock type at this area?:</p>
+  <%= form.text_field :rock_type %>
+
+  <p><%= form.submit "Create Area" %></p>
+<% end %>

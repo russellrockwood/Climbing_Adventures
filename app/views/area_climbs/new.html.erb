@@ -1,0 +1,19 @@
+<%= form_with url: "/climbs", method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <p>Enter the name of new climb:</p>
+  <%= form.text_field :name %>
+  <p>Is climb sport or trad?:</p>
+  <%= form.text_field :sport_or_trad %>
+  <p>What is the YDS difficulty of this climb?:</p>
+  <%= form.text_field :yds_difficulty %>
+  <p>How many pitches does this climb have?:</p>
+  <%= form.text_field :number_of_pitches %>
+  <p>How many draws are required for this climb?:</p>
+  <%= form.text_field :number_of_draws %>
+  <p>Does this climb have dangerous fall potential?:</p>
+  <%= form.text_field :dangerous_falls %>
+  <input type="hidden" name="area_id" value="<%= @area_id %>">
+
+
+  <%= form.submit "Create new climb" %>
+<% end %>
