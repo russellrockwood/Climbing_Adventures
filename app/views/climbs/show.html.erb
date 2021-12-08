@@ -1,0 +1,11 @@
+<h3><%= @climb.name %></h3>
+
+<p>Sport or Trad? - <%= @climb.sport_or_trad %> </p>
+<p>Yosemite Decimal System Difficulty - <%= @climb.yds_difficulty %> </p>
+<p>Number of pitches - <%= @climb.number_of_pitches %> </p>
+<p>Number of draws required - <%= @climb.number_of_draws %> </p>
+<p>Is there dangerous fall potential? - <%= @climb.dangerous_falls %> </p>
+
+<p><%= link_to "Update #{@climb.name}", "/climbs/#{@climb.id}/edit", method: :get %></p>
+
+<p><%= link_to "Delete #{@climb.name}", "/climbs/#{@climb.id}", method: :delete %></p>
