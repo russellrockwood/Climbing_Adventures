@@ -1,24 +1,53 @@
-# README
+# Rock Climbing Adventures
+> Climbing Adventures is a site that allows users to store information regarding cities, hostels, rock climbing areas and rock climbing routes. Each city can have many hostels, and each rock climbing area can have many routes.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Table of Contents
+* [General Info](#general-information)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Technologies Used](#technologies-used)
+* [Featured Applications](#featured-applications)
+* [Project Status](#project-status)
+* [Acknowledgements](#acknowledgements)
+* [Collaborators](#collaborators)
 
-Things you may want to cover:
 
-* Ruby version
+## General Information
+This site utilizes the Ruby on Rails framework,
 
-* System dependencies
+## Installation
+Code can be found on Git Hub where it can be cloned to your local machine for further use.
+- [Git Hub Link](https://github.com/russellrockwood/EventWarez)
 
-* Configuration
+## Usage
+After downloading to your local machine, open in your preferred IDE. Run 'rails s' to start server. Visit http://localhost:3000/ to run
 
-* Database creation
+## Technologies Used
+- Ruby
+- Ruby on Rails
+- HTML
+- CSS
+- dbdesigner.net was used to outline our database structure
 
-* Database initialization
+## Featured Applications
+- Create new cities
+- Create new hostels in cities
+- Create new areas
+- Create new climbs in rock climbing areas
+- Sort climbs and hostels alphabatacally
+- Only show c
 
-* How to run the test suite
+## Room for Improvement
 
-* Services (job queues, cache servers, search engines, etc.)
+The following features can be further expanded upon to increase functionality of the applications:
+- We could add more features to sort by other parameters
+- We could also create a relationship between cities and climbing areas - currently, these are separate, but it would likely be useful to users to be able to see hostels and climbing areas near a given city
 
-* Deployment instructions
+## Acknowledgements
+- This project was based on [this prompt](https://backend.turing.edu/module2/projects/relational_rails).
+- Many thanks to our Turing instructors for their help
 
-* ...
+
+## Collaborators
+- Russell Rockwood  russell.rockwood@gmail.com
+- Croix Kimmel  croixkimmel@gmail.com
