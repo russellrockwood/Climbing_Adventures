@@ -11,8 +11,13 @@ RSpec.describe 'the climbs show page' do
     visit "/areas/#{area.id}/climbs"
 
     expect(page).to have_content('Royal Arches')
-    # expect(page).to have_content(@climb.name)
-    # expect(page).to have_content(@climb.number_of_pitches)
+    expect(page).to have_content('Sport or Trad? - trad')
+    expect(page).to have_content('Yosemite Decimal System Difficulty - 5.10a')
+    expect(page).to have_content('Number of pitches - 15')
+    expect(page).to have_content('Number of draws required - 0')
+    expect(page).to have_content('Is there dangerous fall potential? - false')
+  end
+
 
   end
 end
