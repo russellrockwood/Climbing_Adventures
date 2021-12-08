@@ -19,22 +19,21 @@ RSpec.describe Hostel do
       city_id: @city1.id
     )
   end
-  # describe 'instance methods' do
-    # call an instance method on a class
-  # end
 
   describe 'class methods' do
     it 'only shows hostels with vacancies' do
-      expect(@city1.hostels.hostels_with_vacancies.length).to eq(1)
+      expect(Hostel.hostels_with_vacancies.include?(@hostel1)).to eq(true)
+      expect(Hostel.hostels_with_vacancies.include?(@hostel2)).to eq(false)
     end
 
     it "can sort hostels alphabatacally" do
-      expect(@city1.hostels.alphabetical.first.name).to eq("Big Hostel")
-      expect(@city1.hostels.alphabetical.last.name).to eq("Small Hostel")
+      expect(Hostel.alphabetical.first).to eq(@hostel2)
+      expect(Hostel.alphabetical.last).to eq(@hostel1)
     end
 
     it "finds hostels with where max occupany meets input threshold" do
-      expect(@city1.hostels.occupancy_threshold(16).length).to eq(1)
+      expect(Hostel.occupancy_threshold(16).include?(@hostel1)).to eq(false)
+      expect(Hostel.occupancy_threshold(16).include?(@hostel2)).to eq(true)
     end
   end
 

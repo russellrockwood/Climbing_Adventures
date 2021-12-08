@@ -3,6 +3,6 @@ class City < ApplicationRecord
   validates_presence_of :name
 
   def self.cities_desc
-    City.all.order('created_at DESC')
+    City.order('created_at DESC')
   end
 end
