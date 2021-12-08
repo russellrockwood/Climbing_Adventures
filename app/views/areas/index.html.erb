@@ -6,7 +6,7 @@
   <h3>
     <%= area.name %>
     <%= button_to "Edit #{area.name}", "/areas/#{area.id}/edit", method: :get %>
-    <%= button_to "Delete", "/areas/#{area.id}", method: :delete %>
+    <%= button_to "Delete #{area.name}", "/areas/#{area.id}", method: :delete %>
   </h3>
   <p>Nearest city: <%= area.nearest_city %></p>
   <p>State: <%= area.state %></p>
