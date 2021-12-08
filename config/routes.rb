@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get '/climbs/:id', to: 'climbs#show'
 
   get '/areas/:area_id/climbs', to: 'area_climbs#index'
+  # get '/areas/:area_id/climbs/:climb_id', to: 'area_climbs#index'
   get '/areas/:area_id/climbs/new', to: 'area_climbs#new'
   post '/climbs', to: 'area_climbs#create'
 

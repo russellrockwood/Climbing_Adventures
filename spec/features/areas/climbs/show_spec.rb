@@ -11,6 +11,8 @@ RSpec.describe 'the climbs show page' do
     visit "/areas/#{area.id}/climbs"
 
     expect(page).to have_content('Royal Arches')
-  end
+    # expect(page).to have_content(@climb.name)
+    # expect(page).to have_content(@climb.number_of_pitches)
 
+  end
 end

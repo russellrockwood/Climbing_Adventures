@@ -16,10 +16,6 @@ class AreaClimbsController < ApplicationController
     @area_id = params[:area_id]
   end
 
-  def show
-    @climb = Climb.find(params[:id])
-  end
-
   def create
     @area_id = params[:area_id]
     climb = Climb.create(climb_params)
