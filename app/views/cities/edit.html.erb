@@ -1,5 +1,5 @@
 <a href="/cities/<%= @city.id %>">Back</a>
-<h1>Update <%= @city.name %></h1>
+<h3><%= @city.name %></h3>
 
 <%= form_with url: "/cities/#{@city.id}", method: :patch, local:true do |form| %>
   <%= form.label :name %>
