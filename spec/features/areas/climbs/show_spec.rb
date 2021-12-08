@@ -18,4 +18,6 @@ RSpec.describe 'the climbs show page' do
     expect(page).to have_content('Is there dangerous fall potential? - false')
   end
 
+
+  end
 end
