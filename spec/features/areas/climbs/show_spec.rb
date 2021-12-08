@@ -19,5 +19,4 @@ RSpec.describe 'the climbs show page' do
   end
 
 
-  end
 end
