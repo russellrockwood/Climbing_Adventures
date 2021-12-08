@@ -25,19 +25,22 @@ RSpec.describe 'Climbs in area index' do
     has_free_camping: false, cost_for_paid_camping: 10, rock_type: 'granite')
     royal_arches = area.climbs.create(name: 'Royal Arches', sport_or_trad: 'trad', yds_difficulty: '5.10a',
     number_of_pitches: 15, number_of_draws: 0, dangerous_falls: false)
-    dawn_wall = area.climbs.create(name: 'The Dawn Wall', sport_or_trad: 'trad', yds_difficulty: '5.14c',
+    dawn_wall = area.climbs.create(name: 'Dawn Wall', sport_or_trad: 'trad', yds_difficulty: '5.14c',
     number_of_pitches: 32, number_of_draws: 0, dangerous_falls: true)
     separate_reality = area.climbs.create(name: 'Separate Reality', sport_or_trad: 'trad', yds_difficulty: '5.12a',
     number_of_pitches: 1, number_of_draws: 0, dangerous_falls: true)
 
     visit "/areas/#{area.id}/climbs"
 
-    click_button "Sort climbs alphabetically"
+    click_on "Sort alphabetically"
 
     expect(page).to have_content(royal_arches.name)
     expect(page).to have_content(dawn_wall.name)
-    expect('The Dawn Wall').to appear_before('Royal Arches')
+
     expect('Royal Arches').to appear_before('Separate Reality')
+    expect('Dawn Wall').to appear_before('Separate Reality')
+    expect('Dawn Wall').to appear_before('Royal Arches')
+
   end
 
   it 'can only show climbs with a certain number of pitches' do

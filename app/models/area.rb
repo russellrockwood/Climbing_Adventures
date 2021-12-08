@@ -9,8 +9,8 @@ class Area < ApplicationRecord
     climbs.where("number_of_pitches > ?", min_pitches)
   end
 
-  def climbs_alphabetical
-    climbs.order('name ASC')
-  end
+  # def climbs_alphabetical
+  #   climbs.order('name ASC')
+  # end
 
 end

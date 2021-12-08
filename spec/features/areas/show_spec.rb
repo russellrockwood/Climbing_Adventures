@@ -16,8 +16,8 @@ RSpec.describe 'the area show view' do
 
     visit "/areas/#{red_rock.id}"
 
-    expect(page).to have_link('Areas index')
-    expect(page).to have_link('Climbs index')
+    expect(page).to have_link('Areas')
+    expect(page).to have_link('Climbs')
   end
 
   it 'can show number of climbs' do

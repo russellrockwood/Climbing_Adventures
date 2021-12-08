@@ -19,8 +19,8 @@ RSpec.describe 'the area index view' do
 
     visit "/areas/"
 
-    expect(page).to have_link('Areas index')
-    expect(page).to have_link('Climbs index')
+    expect(page).to have_link('Areas')
+    expect(page).to have_link('Climbs')
   end
 
 
@@ -30,8 +30,8 @@ RSpec.describe 'the area index view' do
 
     visit "/areas/"
 
-    expect(page).to have_link('Areas index')
-    expect(page).to have_link('Climbs index')
+    expect(page).to have_link('Areas')
+    expect(page).to have_link('Climbs')
 
     expect('Yosemite').to appear_before('Red Rock')
   end
