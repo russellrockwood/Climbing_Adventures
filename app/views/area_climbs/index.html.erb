@@ -2,10 +2,7 @@
 
 <p><%= link_to "New #{@area.name} climb", "/areas/#{@area.id}/climbs/new" %></p>
 
-<%= button_to "Sort climbs alphabetically", "/areas/#{@area.id}/climbs?sort=asc", method: :get %>
-
-<a href="/areas/<%= @area.id %>/climbs?order=name">Sort</a>
-
+<%= link_to "Sort alphabetically", :controller => "area_climbs", :order => "name" %>
 
 <%= form_with url: "/areas/#{@area.id}/climbs", method: :get, local: true do |form| %>
   <%= form.label :number_of_pitches %>

@@ -5,4 +5,8 @@ class Climb < ApplicationRecord
     Climb.where(dangerous_falls: true)
   end
 
+  def self.alphabetical
+    Climb.order('name')
+  end
+
 end

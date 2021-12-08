@@ -2,8 +2,8 @@ class AreaClimbsController < ApplicationController
   def index
 
     @area = Area.find(params[:area_id])
-    if params[:sort]
-      @climbs = @area.climbs_alphabetical
+    if params[:order]
+      @climbs = @area.climbs.alphabetical
     elsif params[:number_of_pitches]
       @climbs = @area.min_pitch(params[:number_of_pitches])
     else
