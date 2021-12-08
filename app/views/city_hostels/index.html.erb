@@ -1,0 +1,21 @@
+
+<%= link_to 'Back', "/cities/#{@city.id}" %><br><br>
+
+<h2><%= @city.name %> Hostels</h2>
+<%= link_to 'Add Hostel', "/cities/#{@city.id}/hostels/new" %>
+<br><br>
+<%= form_with url: "/cities/#{@city.id}/hostels", method: :get, local: true do |form| %>
+  <%= form.number_field :max %>
+  <%= form.submit 'Filter by max occupancy' %>
+<% end %>
+
+<%= link_to "Sort Alphabetically", :controller => "city_hostels", :order => "name" %>
+
+<% @hostels.each do |hostel| %>
+  <h3><%= hostel.name %></h3>
+  <p>Vacancies: <%= hostel.vacancies %></p>
+  <p>Max Occupancy: <%= hostel.max_occupancy %></p>
+  <p>Date Added: <%= hostel.created_at %></p>
+  <p>Updated: <%= hostel.updated_at %></p>
+  <hr>
+<% end %>
