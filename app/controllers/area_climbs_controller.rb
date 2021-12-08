@@ -1,25 +1,15 @@
 class AreaClimbsController < ApplicationController
   def index
-    #binding.pry
-    # @area = Area.find(params[:area_id])
-    # @climbs = @area.climbs
-
-    # if params[:order] == 'name'
-    #   # binding.pry
-    #   @climbs = Climb.climbs_alphabetical
-    # else
-    #   @area = Area.find(params[:area_id])
-    #   @climbs = @area.climbs
-    # end
-    # binding.pry
 
     @area = Area.find(params[:area_id])
-    if params[:min_pitches]
-      @climbs = @area.climbs.min_pitch(params[:min_pitches])
-      # redirect_to "/areas/#{@area_id}/climbs"
+    if params[:sort]
+      @climbs = @area.climbs_alphabetical
+    elsif params[:number_of_pitches]
+      @climbs = @area.min_pitch(params[:number_of_pitches])
     else
       @climbs = @area.climbs
     end
+
   end
 
   def new

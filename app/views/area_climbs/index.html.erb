@@ -2,14 +2,14 @@
 
 <p><%= link_to "New #{@area.name} climb", "/areas/#{@area.id}/climbs/new" %></p>
 
-<%= button_to "Sort climbs alphabetically", "/areas/#{@area.id}/climbs?order=name", method: :get %>
+<%= button_to "Sort climbs alphabetically", "/areas/#{@area.id}/climbs?sort=asc", method: :get %>
 
 <a href="/areas/<%= @area.id %>/climbs?order=name">Sort</a>
 
 
 <%= form_with url: "/areas/#{@area.id}/climbs", method: :get, local: true do |form| %>
-  <%= form.label :min_pitches %>
-  <%= form.number_field :min_pitches %>
+  <%= form.label :number_of_pitches %>
+  <%= form.number_field :number_of_pitches %>
   <%= form.submit 'Only return climbs with at least this many pitches' %>
 <% end %>
 

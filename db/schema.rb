@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 2021_12_02_213139) do
     t.boolean "has_free_camping"
     t.integer "cost_for_paid_camping"
     t.string "rock_type"
-    t.datetime "created_at"
-    t.datetime "updatedat"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "climbs", force: :cascade do |t|
