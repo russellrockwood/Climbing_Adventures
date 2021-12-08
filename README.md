@@ -29,6 +29,9 @@ After downloading to your local machine, open in your preferred IDE. Run 'rails 
 - CSS
 - dbdesigner.net was used to outline our database structure
 
+![Screen Shot 2021-12-08 at 1 29 42 PM](https://user-images.githubusercontent.com/20864043/145305754-cf044b11-dbea-4eb6-8a37-8f4c0b21daf2.png)
+
+
 ## Featured Applications
 - Create new cities
 - Create new hostels in cities
