@@ -10,15 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-#ActiveRecord::Schema.define(version: 2021_12_02_213139) do
-
-ActiveRecord::Schema.define(version: 2021_11_30_044911) do
-
+ActiveRecord::Schema.define(version: 2021_12_02_213139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
 
   create_table "areas", force: :cascade do |t|
     t.string "name"
@@ -27,16 +22,17 @@ ActiveRecord::Schema.define(version: 2021_11_30_044911) do
     t.boolean "has_free_camping"
     t.integer "cost_for_paid_camping"
     t.string "rock_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
     t.boolean "travel_advisory"
     t.integer "population"
-
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
 
   create_table "climbs", force: :cascade do |t|
     t.string "name"
@@ -51,8 +47,6 @@ ActiveRecord::Schema.define(version: 2021_11_30_044911) do
     t.index ["area_id"], name: "index_climbs_on_area_id"
   end
 
-  add_foreign_key "climbs", "areas"
-
   create_table "hostels", force: :cascade do |t|
     t.string "name"
     t.boolean "vacancies"
@@ -63,6 +57,6 @@ ActiveRecord::Schema.define(version: 2021_11_30_044911) do
     t.index ["city_id"], name: "index_hostels_on_city_id"
   end
 
+  add_foreign_key "climbs", "areas"
   add_foreign_key "hostels", "cities"
-
 end
