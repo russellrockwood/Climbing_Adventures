@@ -1,0 +1,11 @@
+<h2>All Hostels</h2>
+
+<% @hostels.each do |hostel| %>
+  <h3><a href="/hostels/<%= hostel.id %>"><%= hostel.name =%></a></h3>
+  <p>Vacancies: <%= hostel.vacancies %></p>
+  <p>Max Occupancy: <%= hostel.max_occupancy %></p>
+  <p>Added: <%= hostel.created_at %></p>
+  <p>Updated: <%= hostel.updated_at %></p>
+  <%= link_to 'Update', "/hostels/#{hostel.id}/edit", method: :get%>
+  <%= button_to 'delete', "/hostels/#{hostel.id}", method: :delete %><br><hr>
+<% end %>

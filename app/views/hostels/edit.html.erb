@@ -1,0 +1,15 @@
+
+<%= form_with url: "/hostels/#{@hostel.id}", method: :patch, local:true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %><br>
+
+  <%= form.label :vacancies %>
+  <%= form.check_box :vacancies %><br>
+
+  <%= form.label :max_occupancy %>
+  <%= form.number_field :max_occupancy %><br>
+
+  <%= form.hidden_field :city_id, value: @hostel.city_id %><br>
+
+  <%= form.submit "Update" %>
+<% end %>

@@ -1,0 +1,14 @@
+<%= link_to 'Back', "/cities", method: :get%><br><br>
+
+<%= form_with url: '/cities', method: :post, local: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br><br>
+
+  <%= label_tag(:travel_advisory, "Travel Advisory?") %>
+  <%= check_box_tag(:travel_advisory) %><br><br>
+
+  <%= f.label :population %>
+  <%= f.number_field :population %><br><br>
+
+  <%= f.submit 'Add City'%>
+<% end %>

@@ -1,0 +1,14 @@
+<h2>All Cities</h2><br>
+
+<% @cities.each do |city| %>
+  <h3>
+    <a href="/cities/<%= city.id %>"><%= city.name %></a>
+  </h3>
+  <p>Date Added: <%= city.created_at %></p>
+  <%= link_to 'Update', "/cities/#{city.id}/edit", method: :get%>
+  <%= button_to 'delete', "/cities/#{city.id}", method: :delete %><br><hr>
+<% end %>
+
+<br>
+
+<%= link_to 'New City', "/cities/new", method: :get%>
