@@ -22,10 +22,10 @@ RSpec.describe 'Hostel show page', type: :feature do
     expect(page).to have_content(@hostel1.updated_at)
   end
 
-  it "has a link to hostels index" do
+  it "has a back button" do
     visit "/hostels/#{@hostel1.id}"
 
-    expect(page).to have_link("Hostel Index", :href=>"/hostels")
+    expect(page).to have_link("Back", :href=>"/hostels")
   end
 
   it "has a link to hostel edit page" do

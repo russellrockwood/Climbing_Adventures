@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Cities edit page', type: :feature do
-  it "has prefilled city fields to edit" do
+  it "has city fields to edit" do
     city1 = City.create(
       name: 'Townsville',
       travel_advisory: true,
@@ -10,7 +10,7 @@ RSpec.describe 'Cities edit page', type: :feature do
       visit "/cities/#{city1.id}/edit"
 
       expect(page).to have_content(city1.name)
-      expect(page).to have_field("Travel Advisory", checked: true)
+      expect(page).to have_field("travel_advisory")
       expect(page).to have_field("population")
 
 
